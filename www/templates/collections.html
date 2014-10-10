@@ -9,12 +9,11 @@
                 <i class="icon ion-search placeholder-icon"></i>
                 <input type="text" placeholder="Search">
                 
-                
             </label>
         </div>
         <ion-list>
-            <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
-                {{playlist.title}}
+            <ion-item ng-repeat="collection in collections" type="item-text-wrap" href="#/collection/{{collection.id}}">
+        {{collection.element_texts[0].text}}
             </ion-item>
         </ion-list>
     </ion-content>

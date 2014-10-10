@@ -32,17 +32,81 @@ angular.module('starter.controllers', [])
     }, 1000);
   };
 })
-
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
+.controller('CollectionsCtrl', function($scope,$http) {
+    
+          $http({
+            url: "http://83.212.109.180/omeka/api/collections/",
+            dataType: "json",
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+            }).success(function(response){
+                $scope.collections = response;
+            }).error(function(error){
+                $scope.error = error;
+            });
+            
+            alert ("test");
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+.controller('CollectionDetailCtrl', function($scope,$stateParams,$http) {
+    
+    
+          $http({
+            url: "http://83.212.109.180/omeka/api/collections/"+$stateParams.collectionId,
+            dataType: "json",
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+            }).success(function(response){
+                
+                $scope.collection_name = response.element_texts[0].text;
+                 $http({
+                    url: response.items.url,
+                    dataType: "json",
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                    }).success(function(response){
+
+                        $scope.items = response;
+
+                    }).error(function(error){
+                        $scope.error = error;
+                    });
+                
+                
+                
+            }).error(function(error){
+                $scope.error = error;
+            });
+})
+
+
+.controller('ItemDetailCtrl', function($scope,$stateParams,$http) {
+    
+    
+    $http({
+            url: "http://83.212.109.180/omeka/api/items/"+$stateParams.itemId,
+            dataType: "json",
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+            }).success(function(response){
+                
+                $scope.item = response;
+                  
+                
+            }).error(function(error){
+                $scope.error = error;
+            });
+})
+
+
+
+.controller('CollectionCtrl', function($scope, $stateParams) {
 });

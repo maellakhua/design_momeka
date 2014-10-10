@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic', 'starter.controllers' ,'ui.router'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -29,6 +29,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       templateUrl: "templates/menu.html",
       controller: 'AppCtrl'
     })
+   
 
     .state('app.home', {
       url: "/home",
@@ -43,8 +44,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: "/latest",
       views: {
         'menuContent' :{
-          templateUrl: "templates/latest.html",
-          controller: 'PlaylistsCtrl'//AFTO THA ALLAKSEI!!
+          templateUrl: "templates/latest.html"
+         
         }
       }
     })
@@ -52,8 +53,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: "/favorites",
       views: {
         'menuContent' :{
-          templateUrl: "templates/favorites.html",
-          controller: 'PlaylistsCtrl'//AFTO THA ALLAKSEI!!
+          templateUrl: "templates/favorites.html"
+          
         }
       }
     })
@@ -65,12 +66,21 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
-    .state('app.browse', {
-      url: "/browse",
+    .state('app.collections', {
+      url: "/collections",
       views: {
         'menuContent' :{
-          templateUrl: "templates/browse.html",
-          controller: 'PlaylistsCtrl'
+          templateUrl: "templates/collections.html",
+          controller: 'CollectionsCtrl'
+        }
+      }
+    })
+    .state('app.collection-details', {
+      url: '/collection/:collectionId',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/collection-details.html',
+          controller: 'CollectionDetailCtrl'
         }
       }
     })
@@ -78,22 +88,14 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: "/settings",
       views: {
         'menuContent' :{
-          templateUrl: "templates/settings.html",
+          templateUrl: "templates/settings.html"
           
         }
       }
-    })
-
-
-    .state('app.single', {
-      url: "/playlists/:playlistId",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/playlist.html",
-          controller: 'PlaylistCtrl'
-        }
-      }
     });
+
+
+    
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/home');
 });
