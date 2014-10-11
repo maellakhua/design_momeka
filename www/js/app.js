@@ -40,15 +40,6 @@ angular.module('starter', ['ionic', 'starter.controllers' ,'ui.router'])
       }
     })
 
-    .state('app.latest', {
-      url: "/latest",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/latest.html"
-         
-        }
-      }
-    })
      .state('app.favorites', {
       url: "/favorites",
       views: {
@@ -66,6 +57,16 @@ angular.module('starter', ['ionic', 'starter.controllers' ,'ui.router'])
         }
       }
     })
+    
+    .state('app.search', {
+      url: "/search",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/search.html"
+        }
+      }
+    })
+    
     .state('app.collections', {
       url: "/collections",
       views: {
@@ -84,12 +85,33 @@ angular.module('starter', ['ionic', 'starter.controllers' ,'ui.router'])
         }
       }
     })
+    
+    .state('app.item-details', {
+      url: '/item/:itemId',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/item-details.html',
+          controller: 'ItemDetailCtrl'
+        }
+      }
+    })
+    
     .state('app.settings', {
       url: "/settings",
       views: {
         'menuContent' :{
           templateUrl: "templates/settings.html"
           
+        }
+      }
+    })
+    
+    .state('app.latest', {
+      url: '/latest',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/latest.html',
+          controller: 'latestCtrl'
         }
       }
     });

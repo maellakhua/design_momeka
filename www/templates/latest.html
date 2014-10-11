@@ -2,7 +2,15 @@
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
-  <ion-content class="has-header">
-    Latest
+  <ion-content has-header="true" padding="true">
+     <!-- <ul>
+          <li ng-repeat="pic in latest_pics"><a href="#/item/{{item.id}}"><img src="{{pic}}"></a></li>
+        </ul>
+        -->
+      <ul ng-repeat="pic in latest_pics">
+            <li ng-repeat="(key, val) in pic"><a href="#app/item/{{val}}"><img src="{{key}}"></a></li>
+        </ul>
+     
+     
   </ion-content>
 </ion-view>
