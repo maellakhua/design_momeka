@@ -9,10 +9,11 @@
         <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
     </ion-nav-buttons>
   <ion-content has-header="true" padding="true">
-     
+      <h3>Image:</h3>
       <ul ng-repeat="pic in pics">
+          
             <li ng-repeat="(key, val) in pic"><a href="{{val}}" target="_blank"><img src="{{key}}"></a></li>
-        </ul>
+        </ul><br></br>
         <ul ng-repeat="item in items">
             <li ng-repeat="(key, val) in item"><h3>{{key}}:</h3> {{val}}</li>
         </ul>

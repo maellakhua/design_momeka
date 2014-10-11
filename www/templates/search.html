@@ -1,21 +1,30 @@
-<ion-view title="Search">
-    <ion-nav-buttons side="left">
-        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
-    </ion-nav-buttons>
+<div class="modal">
+<ion-header-bar>
+    <h1 class="title">Search</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeSearch()">Close</button>
+    </div>
+  </ion-header-bar>
+    
   <ion-content has-header="true" padding="true">
+      <form  ng-submit="dosearch()">
+      
+          
   <div ng-app="search" ng-controller="SearchItemsCtrl" >
       
      
-      <input type="text" placeholder="Type item's name.." ng-model="item_name" ng-change="onchange()">
+      <input  type="text" placeholder="Type item's name.." ng-model="item_name"  ng-change="onchange()" >
    
-      </br>   
-      
+        </br>   
+       
       <ion-list>
-        <ion-item ng-repeat="item in foundItems" type="item-text-wrap" href="#app/item/{{item.id}}">
+          <ion-item ng-click="closeSearch()" ng-repeat="item in foundItems" type="item-text-wrap"  href="#app/item/{{item.id}}">
           {{item.element_texts[0].text}}
         </ion-item>
     </ion-list>
       
   </div>
+      </form>
   </ion-content>
-</ion-view>
+
+</div>

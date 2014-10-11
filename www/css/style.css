@@ -1,6 +1,8 @@
 .bar.bar-stable {
+
 background-color: #003D66;
 }
+
 
 .item-complex .item-content {
 background-color: #FFFFFF;
@@ -17,3 +19,11 @@ background-color: #FFFFFF;
 .button.button-icon {
 color:white;
 }
+
+header.bar.bar-header.bar-stable h1.title{
+    color:white;
+}
+ion-nav-bar.bar-stable.nav-title-slide-ios7.bar.bar-header.nav-bar.disable-user-behavior.no-animation h1.title.ng-binding{
+    color:white;
+}
+
