@@ -1,6 +1,15 @@
 angular.module('starter.controllers', [])
 
-
+.controller('siteUrlCtrl', function($scope,Url,$http) {
+    $scope.assignUrl = function(url){
+        Url.setUrl(url);
+        alert(url);
+        
+    };
+        
+    
+    
+})
 
 .controller('CollectionsCtrl', function($scope,$http) {
     
@@ -53,6 +62,8 @@ angular.module('starter.controllers', [])
                 $scope.error = error;
             });
 })
+
+
 
 .controller('SearchItemsCtrl', function($scope,$http) {
     $scope.onchange = function(){

@@ -7,12 +7,12 @@
         <h2>
             <div class="list">
 
-                <div class="item item-input-inset">
+                <div class="item item-input-inset" ng-app="siteUrl" ng-controller="siteUrlCtrl" >
                     URL:
-                    <label class="item-input-wrapper">
-                        <input type="text" placeholder="Type...">
+                    <label class="item-input-wrapper" >
+                        <input type="text" placeholder="Type ..." ng-model="siteUrl">
                     </label>
-                    <button class="button button-small">
+                    <button class="button button-small" ng-click="assignUrl(siteUrl)">
                         Enter
                     </button>
                 </div>
