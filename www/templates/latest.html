@@ -7,10 +7,13 @@
           <li ng-repeat="pic in latest_pics"><a href="#/item/{{item.id}}"><img src="{{pic}}"></a></li>
         </ul>
         -->
-        <div id="container">
-      <ul  ng-repeat="pic in latest_pics">
-            <li ng-repeat="(key, val) in pic"><a href="#app/item/{{val}}"><img src="{{key}}"></a></li>
-        </ul>
+        <div class="list card"> 
+            <table width="100%">
+            
+      <tr ng-repeat="pic in latest_pics">
+            <th ng-repeat="(key, val) in pic"><a href="#app/item/{{val}}"><img src="{{key}}"></a></th>
+        </tr>
+        </table>
         </div>
      
   </ion-content>
