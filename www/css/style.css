@@ -58,3 +58,7 @@ ion-nav-bar.bar-stable.nav-title-slide-ios7.bar.bar-header.nav-bar.disable-user-
 a:link {
     text-decoration: none;
 }
+
+div.list.card {
+   background-color:#F0F0F0 ;
+}
