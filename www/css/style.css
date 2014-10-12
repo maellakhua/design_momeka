@@ -11,10 +11,14 @@ background-color: #2ea2cc;
 .menu.menu-left {
      background-color: #222222;
 }
-
+#container ul{
+    background-color:#FFFFFF;
+    width:280px;
+    margin:0 auto;
+  }
 .pane {
     background-color:#DFDFDF;
-    background-image:url(../img/bgffff.jpg);
+    background-image:url(../img/momeka.jpg);
     background-size: 100% ;
     background-repeat: no-repeat;
    
