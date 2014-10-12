@@ -1,25 +1,39 @@
 .bar.bar-stable {
-
-background-color: #003D66;
+background-color: #2ea2cc;
 }
 
-
 .item-complex .item-content {
-background-color: #FFFFFF;
+    background-color: #24343B;
+   
 }
 
 .menu.menu-left {
-background-color: #003D66;
+     background-color: #2ea2cc;
 }
 
-div .item {
-background-color: #FFFFFF;
+.pane {
+    background-color:#DFDFDF;
+   
 }
-
-.button.button-icon {
-color:white;
+i{
+    color:white;
 }
-
+.button.button-icon  {
+    color:white;
+}
+ion-side-menus.view ion-side-menu.menu.menu-left ion-content.has-header.scroll-content.ionic-scroll div.scroll ion-list.disable-user-behavior div.list ion-item.item{
+    color:white;
+    background-color: #4C4C4C;
+}
+a.item-content{
+    color:white;
+}
+h1.title.ng-binding {
+    color:white;
+}
+ion-nav-back-button.button{
+    color:white;
+}
 header.bar.bar-header.bar-stable h1.title{
     color:white;
 }
@@ -27,3 +41,6 @@ ion-nav-bar.bar-stable.nav-title-slide-ios7.bar.bar-header.nav-bar.disable-user-
     color:white;
 }
 
+div.scroll.padding ion-list.dasable-user-behavior div.list ion-item.item.item-complex{
+    background-color: #ffffff;
+}
