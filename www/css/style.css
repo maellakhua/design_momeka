@@ -1,18 +1,22 @@
 .bar.bar-stable {
 background-color: #2ea2cc;
+ color:white;
 }
 
 .item-complex .item-content {
-    background-color: #24343B;
+    background-color: #222222;
    
 }
 
 .menu.menu-left {
-     background-color: #2ea2cc;
+     background-color: #222222;
 }
 
 .pane {
     background-color:#DFDFDF;
+    background-image:url(../img/bgffff.jpg);
+    background-size: 100% ;
+    background-repeat: no-repeat;
    
 }
 i{
@@ -21,15 +25,12 @@ i{
 .button.button-icon  {
     color:white;
 }
-ion-side-menus.view ion-side-menu.menu.menu-left ion-content.has-header.scroll-content.ionic-scroll div.scroll ion-list.disable-user-behavior div.list ion-item.item{
-    color:white;
-    background-color: #4C4C4C;
-}
+
 a.item-content{
     color:white;
 }
 h1.title.ng-binding {
-    color:white;
+    color: white;
 }
 ion-nav-back-button.button{
     color:white;
@@ -37,10 +38,25 @@ ion-nav-back-button.button{
 header.bar.bar-header.bar-stable h1.title{
     color:white;
 }
-ion-nav-bar.bar-stable.nav-title-slide-ios7.bar.bar-header.nav-bar.disable-user-behavior.no-animation h1.title.ng-binding{
+.bar.bar-header.nav-bar.disable-user-behavior.no-animation h1.title.ng-binding{
     color:white;
 }
 
-div.scroll.padding ion-list.dasable-user-behavior div.list ion-item.item.item-complex{
-    background-color: #ffffff;
+ion-side-menus.view ion-side-menu.menu.menu-left ion-content.has-header.scroll-content.ionic-scroll div.scroll ion-list.disable-user-behavior div.list ion-item.item{
+    color:white;
+    background-color: #222222;
 }
+
+ion-nav-back-button.button-clear.button.back-button {
+    color: white; 
+}
+
+ion-nav-bar.bar-stable.nav-title-slide-ios7.bar.bar-header.nav-bar.disable-user-behavior.reverse h1.title.ng-binding {
+    color:white;
+}
+    
+a:link {
+    text-decoration: none;
+}
+
+ 
