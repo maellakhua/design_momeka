@@ -103,6 +103,7 @@ angular.module('starter', ['ionic', 'starter.controllers' ,'ui.router', 'starter
         'menuContent' :{
           templateUrl: "templates/settings.html"
           
+          
         }
       }
     })

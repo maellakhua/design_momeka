@@ -14,7 +14,7 @@ background-color: #2ea2cc;
 
 .pane {
     background-color:#DFDFDF;
-    background-image:url(../img/omekaViewer.jpg);
+    background-image:url(../img/omekaViewer2.jpg);
     background-size: 100% ;
     background-repeat: no-repeat;
    
@@ -61,4 +61,9 @@ a:link {
 
 div.list.card {
    background-color:#F0F0F0 ;
+}
+
+ion-item.button.item{
+    background-color: #444444;
+        color:white;
 }
