@@ -2,10 +2,10 @@
 angular.module('starter.controllers', [])
 
 .controller('siteUrlCtrl', function($scope,Url,$http) {
+    $scope.siteUrl=Url.all();
     $scope.assignUrl = function(url){
         Url.setUrl(url);
-        
-        
+        console.log(url); 
     };
         
     

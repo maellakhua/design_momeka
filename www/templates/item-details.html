@@ -9,7 +9,7 @@
         <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
     </ion-nav-buttons>
   <ion-content has-header="true" padding="true">
-      <div class="list card">
+      <div class="list card" >
          
       <table style="width:100%">
           
@@ -23,6 +23,9 @@
        <table  style="width:100%">
         <tr  ng-repeat="item in items">
             <th ng-repeat="(key, val) in item"> <h3>{{key}}</h3> {{val}}<br></br></th>
+        </tr>
+        <tr  ng-repeat="tag in tags">
+            <th ng-repeat="(key, val) in tag"> <h3>{{key}}</h3> {{val}}<br></br></th>
         </tr>
        </table>
       </div>
