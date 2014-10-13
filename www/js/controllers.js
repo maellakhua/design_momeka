@@ -4,7 +4,7 @@ angular.module('starter.controllers', [])
 .controller('siteUrlCtrl', function($scope,Url,$http) {
     $scope.assignUrl = function(url){
         Url.setUrl(url);
-        alert(url);
+        
         
     };
         
@@ -29,39 +29,66 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('CollectionDetailCtrl', function($scope,Url,$stateParams,$http) {
-    
-          $http({
-            url: Url.all() + "/api/collections/" + $stateParams.collectionId,
+.controller('CollectionDetailCtrl', function ($scope, Url, $stateParams, $http) {
+
+    $http({
+        url: Url.all() + "/api/collections/" + $stateParams.collectionId,
+        dataType: "json",
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }).success(function (response) {
+
+        $scope.items_in_collection = response.items.count;
+        $scope.collection_name = response.element_texts[0].text;
+        $http({
+            url: response.items.url,
             dataType: "json",
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
             }
-            }).success(function(response){
-                
-                $scope.items_in_collection=response.items.count;
-                $scope.collection_name = response.element_texts[0].text;
-                 $http({
-                    url: response.items.url,
+        }).success(function (response) {
+
+
+            $scope.items = response;
+            for (var i = 0; i < response.length; i++) {
+                $scope.pic_url56 = response[i].files.url;
+                var jsonarraypic4 = [];
+
+                //console.log(angular.fromJson($scope.items));
+//$scope.pic_url
+                $http({
+                    url: $scope.pic_url56,
                     dataType: "json",
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json"
                     }
-                    }).success(function(response){
+                }).success(function (response) {
+                    
+                    var jsonObj4 = new Object;
+                    var x = response[0].file_urls.square_thumbnail;
+                    var y = response[0].item.id;
+                    jsonObj4[x] = y;
+                    jsonarraypic4.push(jsonObj4);
+                    $scope.pic_thumbnail_url56 = angular.fromJson(jsonarraypic4);
 
-                        $scope.items = response;
+                }).error(function (error) {
+                    $scope.error = error;
+                });
+            }
 
-                    }).error(function(error){
-                        $scope.error = error;
-                    });
-                
-                
-                
-            }).error(function(error){
-                $scope.error = error;
-            });
+        }).error(function (error) {
+            $scope.error = error;
+        });
+
+
+
+    }).error(function (error) {
+        $scope.error = error;
+    });
 })
 
 

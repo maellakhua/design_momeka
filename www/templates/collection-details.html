@@ -5,10 +5,15 @@
   <ion-content has-header="true" padding="true">
       
       <ion-list>
-        <ion-item ng-repeat="item in items" type="item-text-wrap" href="#app/item/{{item.id}}">
-          {{item.element_texts[0].text}}
-        </ion-item>
-    </ion-list>
-      
+          <ion-item ng-repeat="item in items" type="item-text-wrap" href="#app/item/{{item.id}}">
+              <div ng-repeat="pic in pic_thumbnail_url56">
+                  <div ng-repeat="(key, val) in pic">
+                      <div ng-if="val==item.id">
+                          <img height="42" width="42"  src="{{key}} "> {{item.element_texts[0].text}}
+                      </div>
+                  </div>
+              </div>
+          </ion-item>
+      </ion-list>
   </ion-content>
 </ion-view>
