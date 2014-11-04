@@ -4,12 +4,27 @@ angular.module('starter.controllers', [])
 .controller('siteUrlCtrl', function($scope,Url,$http) {
     $scope.siteUrl=Url.all();
     $scope.assignUrl = function(url){
-        Url.setUrl(url);
-        console.log(url); 
-    };
-        
+    Url.setUrl(url); 
+    
+    $http({
+            url: Url.all()+"/api/collections/",
+            dataType: "json",
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+                    }
+                }).success(function (response) {
+                    window.location.href = '#app/collections';
+                    console.log(Url.all());
+                }).error(function (error) {
+                     window.alert('Sorry, your URL is not valid');
+                    window.location.href = '#app/settings';
+                    console.log(Url.all() + "error");
+                    $scope.error = error;
+                });
     
     
+    };  
 })
 
 .controller('CollectionsCtrl', function($scope,Url,$http) {
@@ -24,6 +39,7 @@ angular.module('starter.controllers', [])
             }).success(function(response){
                 $scope.collections = response;
             }).error(function(error){
+                
                 $scope.error = error;
             });
 })
