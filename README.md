@@ -3,6 +3,11 @@ Welcome to Omeka Viewer app.
 GENERAL
 This is a mobile app which connects specific API's from Omeka repository to a User Interface application. Collections are loaded, with the use of Omeka API, in the application and presents each item seperately along with its metadata.
 
+IMPORTANT
+If run from browser remember to open the browser with disabled the web security. In other case the data will not be loaded due to cross origin requests
+For example (for chromium browser - windows):
+chromium-browser --disable-web-security
+
 Technologies
 The User Interface is designed in Ionic framework, AnglularJs, HTML and CSS.
 
